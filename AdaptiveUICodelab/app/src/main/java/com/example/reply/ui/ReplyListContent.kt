@@ -89,8 +89,9 @@ fun ReplyListAndDetailContent(
 @Composable
 fun ReplyEmailListItem(
     email: Email,
-    modifier: Modifier = Modifier.padding(horizontal = 16.dp, vertical = 4.dp)) {
-    Card(modifier = modifier,) {
+    modifier: Modifier = Modifier.padding(horizontal = 16.dp, vertical = 4.dp)
+) {
+    Card(modifier = modifier) {
         Column(
             modifier = Modifier
                 .fillMaxWidth()
@@ -152,8 +153,12 @@ fun ReplyEmailListItem(
 @Composable
 fun ReplyEmailThreadItem(
     email: Email,
-    modifier: Modifier = Modifier.padding(horizontal = 16.dp, vertical = 4.dp)) {
-    Card(modifier = modifier,  colors = CardDefaults.cardColors(containerColor = MaterialTheme.colorScheme.surface)) {
+    modifier: Modifier = Modifier.padding(horizontal = 16.dp, vertical = 4.dp)
+) {
+    Card(
+        modifier = modifier,
+        colors = CardDefaults.cardColors(containerColor = MaterialTheme.colorScheme.surface)
+    ) {
         Column(
             modifier = Modifier
                 .fillMaxWidth()
@@ -200,13 +205,13 @@ fun ReplyEmailThreadItem(
                 color = MaterialTheme.colorScheme.outline,
                 modifier = Modifier.padding(top = 12.dp, bottom = 8.dp),
             )
-            
+
             Text(
                 text = email.body,
                 style = MaterialTheme.typography.bodyLarge,
                 color = MaterialTheme.colorScheme.onSurfaceVariant,
             )
-            
+
             Row(
                 modifier = Modifier
                     .fillMaxWidth()
@@ -254,10 +259,11 @@ fun ReplyProfileImage(
 
 @Composable
 fun ReplySearchBar(modifier: Modifier = Modifier) {
-    Row(modifier = modifier
-        .fillMaxWidth()
-        .padding(16.dp)
-        .background(MaterialTheme.colorScheme.surface, CircleShape),
+    Row(
+        modifier = modifier
+            .fillMaxWidth()
+            .padding(16.dp)
+            .background(MaterialTheme.colorScheme.surface, CircleShape),
         verticalAlignment = Alignment.CenterVertically
     ) {
         Icon(
@@ -266,17 +272,20 @@ fun ReplySearchBar(modifier: Modifier = Modifier) {
             modifier = Modifier.padding(start = 16.dp),
             tint = MaterialTheme.colorScheme.outline
         )
-        Text(text = stringResource(id = R.string.search_replies),
+        Text(
+            text = stringResource(id = R.string.search_replies),
             modifier = Modifier
-            .weight(1f)
-            .padding(16.dp),
+                .weight(1f)
+                .padding(16.dp),
             style = MaterialTheme.typography.bodyMedium,
             color = MaterialTheme.colorScheme.outline
         )
         ReplyProfileImage(
             drawableResource = R.drawable.avatar_6,
             description = stringResource(id = R.string.profile),
-            modifier = Modifier.padding(12.dp).size(32.dp)
+            modifier = Modifier
+                .padding(12.dp)
+                .size(32.dp)
         )
     }
 }
